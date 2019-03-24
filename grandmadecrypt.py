@@ -32,6 +32,7 @@ def encrypt():
     h.close()
     h = open(what_file,"wb")
     h.write(crypt)
+    h.close()
     print("Grandma did her job returning to main menu")
     main()
 
@@ -50,6 +51,7 @@ def decrypt():
     kd = open(where_,"a")
     decoded = decrypted_file.decode()
     kd.write(decoded)
+    kd.close()
     print("Saved to",where_)
     print("Grandma has decrypted your file")
     main()
@@ -59,7 +61,6 @@ def install():
    try:
        print("Making sure all dependencies are installed")
        os.system("pip install fernet")
-       os.system("pip install pycrypto")
        main()
    except:
        print("Not working exitting")
